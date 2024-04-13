@@ -36,7 +36,7 @@
 
 
 <div align="center">
-🙍‍♂️Nombre - Carné
+🙍‍♂️Diego Andrés Dubón Samayoa  - 202202429
 </div>
 
 
