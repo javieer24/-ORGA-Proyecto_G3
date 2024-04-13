@@ -30,6 +30,30 @@
 🙍‍♂️Juan Pascual Itzep Coguox - 202202161
 </div>
 
+<<<<<<< HEAD
+=======
+<div align="center">
+🙍‍♀️ Estephanie Alejandra Ruiz Perez - 202201318
+</div>
+
+
+<div align="center">
+🙍‍♂️Nombre - Carné
+</div>
+
+
+<div align="center">
+🙍‍♂️Nombre - Carné
+</div>
+
+<div align="center">
+🙍‍♂️Nombre - Carné
+</div>
+
+<div align="center">
+🙍‍♂️Nombre - Carné
+</div>
+>>>>>>> main
 
 
 
