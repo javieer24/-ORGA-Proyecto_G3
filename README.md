@@ -41,7 +41,7 @@
 
 
 <div align="center">
-🙍‍♂️Nombre - Carné
+🙍‍♂️Angel Isaias Mendoza Martinez - 202180003
 </div>
 
 <div align="center">
