@@ -45,11 +45,11 @@
 </div>
 
 <div align="center">
-🙍‍♂️Nombre - Carné
+🙍‍♂️Juan José Almengor Tizol-202212209
 </div>
 
 <div align="center">
-🙍‍♂️Nombre - Carné
+🙍‍♂️Edin Rafael Santizo Barrera - 202202072
 </div>
 
 
