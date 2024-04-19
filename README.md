@@ -52,6 +52,9 @@
 🙍‍♂️Edin Rafael Santizo Barrera - 202202072
 </div>
 
+<div align="center">
+🙍‍♂️Cristian Raúl Vega Rodríguez - 202010942
+</div>
 
 
 
