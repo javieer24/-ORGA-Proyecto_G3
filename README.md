@@ -36,28 +36,31 @@
 
 
 <div align="center">
-🙍‍♂️Nombre - Carné
+🙍‍♂️Diego Andrés Dubón Samayoa  - 202202429
 </div>
 
 
 <div align="center">
-🙍‍♂️Nombre - Carné
+🙍‍♂️Angel Isaias Mendoza Martinez - 202180003
 </div>
 
 <div align="center">
-🙍‍♂️Nombre - Carné
+🙍‍♂️Juan José Almengor Tizol-202212209
 </div>
 
 <div align="center">
-🙍‍♂️Nombre - Carné
+🙍‍♂️Edin Rafael Santizo Barrera - 202202072
 </div>
 
+<div align="center">
+🙍‍♂️Cristian Raúl Vega Rodríguez - 202010942
+</div>
 
 
 
 <!-- Resumen -->
 ## Resumen
-S
+
 
 ## 📖 Documentación
 Para comprender de mejor manera el funcionamiento del proyecto puede dirigirse a lo siguiente información:
