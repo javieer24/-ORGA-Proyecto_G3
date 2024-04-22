@@ -30,8 +30,6 @@
 🙍‍♂️Juan Pascual Itzep Coguox - 202202161
 </div>
 
-<<<<<<< HEAD
-=======
 <div align="center">
 🙍‍♀️ Estephanie Alejandra Ruiz Perez - 202201318
 </div>
@@ -53,7 +51,6 @@
 <div align="center">
 🙍‍♂️Edin Rafael Santizo Barrera - 202202072
 </div>
->>>>>>> main
 
 <div align="center">
 🙍‍♂️Cristian Raúl Vega Rodríguez - 202010942
@@ -63,7 +60,7 @@
 
 <!-- Resumen -->
 ## Resumen
-S
+
 
 ## 📖 Documentación
 Para comprender de mejor manera el funcionamiento del proyecto puede dirigirse a lo siguiente información:
