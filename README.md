@@ -66,5 +66,5 @@
 Para comprender de mejor manera el funcionamiento del proyecto puede dirigirse a lo siguiente información:
     <ul>
        <li><a href="">:point_right:Planteamiento de proyecto</a></li>
-        <li><a href="" target="_blank">:point_right:Documentacion Ensayo</a></li>
+        <li><a href="Documentacion\PROYECTO_1_ORGA.pdf" target="_blank">:point_right:Documentacion Ensayo</a></li>
     </ul>
