@@ -1,0 +1,320 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> init
+Rule 1     init -> L_SENT
+Rule 2     L_SENT -> L_SENT SENT
+Rule 3     L_SENT -> SENT
+Rule 4     SENT -> NEWPRINT ID PUNTOCOMA L_SENT_PRINT ENDPRINT PUNTOCOMA
+Rule 5     L_SENT_PRINT -> L_SENT_PRINT SENT_PRINT
+Rule 6     L_SENT_PRINT -> SENT_PRINT
+Rule 7     SENT_PRINT -> SET_PRINT PARIZQ ENTERO COMA ENTERO COMA COLOR PARDER PUNTOCOMA
+Rule 8     COLOR -> T_CYAN
+Rule 9     COLOR -> T_MAGENTA
+Rule 10    COLOR -> T_AMARILLO
+Rule 11    COLOR -> T_NEGRO
+Rule 12    SET_PRINT -> SET_PRINT_X
+Rule 13    SET_PRINT -> SET_PRINT_O
+Rule 14    SET_PRINT -> SET_PRINT_TRIANGULO
+Rule 15    SET_PRINT -> SET_PRINT_ESTRELLA
+
+Terminals, with rules where they appear
+
+COMA                 : 7 7
+ENDPRINT             : 4
+ENTERO               : 7 7
+ID                   : 4
+NEWPRINT             : 4
+PARDER               : 7
+PARIZQ               : 7
+PUNTOCOMA            : 4 4 7
+SET_PRINT_ESTRELLA   : 15
+SET_PRINT_O          : 13
+SET_PRINT_TRIANGULO  : 14
+SET_PRINT_X          : 12
+T_AMARILLO           : 10
+T_CYAN               : 8
+T_MAGENTA            : 9
+T_NEGRO              : 11
+error                : 
+
+Nonterminals, with rules where they appear
+
+COLOR                : 7
+L_SENT               : 1 2
+L_SENT_PRINT         : 4 5
+SENT                 : 2 3
+SENT_PRINT           : 5 6
+SET_PRINT            : 7
+init                 : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . init
+    (1) init -> . L_SENT
+    (2) L_SENT -> . L_SENT SENT
+    (3) L_SENT -> . SENT
+    (4) SENT -> . NEWPRINT ID PUNTOCOMA L_SENT_PRINT ENDPRINT PUNTOCOMA
+
+    NEWPRINT        shift and go to state 4
+
+    init                           shift and go to state 1
+    L_SENT                         shift and go to state 2
+    SENT                           shift and go to state 3
+
+state 1
+
+    (0) S' -> init .
+
+
+
+state 2
+
+    (1) init -> L_SENT .
+    (2) L_SENT -> L_SENT . SENT
+    (4) SENT -> . NEWPRINT ID PUNTOCOMA L_SENT_PRINT ENDPRINT PUNTOCOMA
+
+    $end            reduce using rule 1 (init -> L_SENT .)
+    NEWPRINT        shift and go to state 4
+
+    SENT                           shift and go to state 5
+
+state 3
+
+    (3) L_SENT -> SENT .
+
+    NEWPRINT        reduce using rule 3 (L_SENT -> SENT .)
+    $end            reduce using rule 3 (L_SENT -> SENT .)
+
+
+state 4
+
+    (4) SENT -> NEWPRINT . ID PUNTOCOMA L_SENT_PRINT ENDPRINT PUNTOCOMA
+
+    ID              shift and go to state 6
+
+
+state 5
+
+    (2) L_SENT -> L_SENT SENT .
+
+    NEWPRINT        reduce using rule 2 (L_SENT -> L_SENT SENT .)
+    $end            reduce using rule 2 (L_SENT -> L_SENT SENT .)
+
+
+state 6
+
+    (4) SENT -> NEWPRINT ID . PUNTOCOMA L_SENT_PRINT ENDPRINT PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 7
+
+
+state 7
+
+    (4) SENT -> NEWPRINT ID PUNTOCOMA . L_SENT_PRINT ENDPRINT PUNTOCOMA
+    (5) L_SENT_PRINT -> . L_SENT_PRINT SENT_PRINT
+    (6) L_SENT_PRINT -> . SENT_PRINT
+    (7) SENT_PRINT -> . SET_PRINT PARIZQ ENTERO COMA ENTERO COMA COLOR PARDER PUNTOCOMA
+    (12) SET_PRINT -> . SET_PRINT_X
+    (13) SET_PRINT -> . SET_PRINT_O
+    (14) SET_PRINT -> . SET_PRINT_TRIANGULO
+    (15) SET_PRINT -> . SET_PRINT_ESTRELLA
+
+    SET_PRINT_X     shift and go to state 11
+    SET_PRINT_O     shift and go to state 12
+    SET_PRINT_TRIANGULO shift and go to state 13
+    SET_PRINT_ESTRELLA shift and go to state 14
+
+    L_SENT_PRINT                   shift and go to state 8
+    SENT_PRINT                     shift and go to state 9
+    SET_PRINT                      shift and go to state 10
+
+state 8
+
+    (4) SENT -> NEWPRINT ID PUNTOCOMA L_SENT_PRINT . ENDPRINT PUNTOCOMA
+    (5) L_SENT_PRINT -> L_SENT_PRINT . SENT_PRINT
+    (7) SENT_PRINT -> . SET_PRINT PARIZQ ENTERO COMA ENTERO COMA COLOR PARDER PUNTOCOMA
+    (12) SET_PRINT -> . SET_PRINT_X
+    (13) SET_PRINT -> . SET_PRINT_O
+    (14) SET_PRINT -> . SET_PRINT_TRIANGULO
+    (15) SET_PRINT -> . SET_PRINT_ESTRELLA
+
+    ENDPRINT        shift and go to state 15
+    SET_PRINT_X     shift and go to state 11
+    SET_PRINT_O     shift and go to state 12
+    SET_PRINT_TRIANGULO shift and go to state 13
+    SET_PRINT_ESTRELLA shift and go to state 14
+
+    SENT_PRINT                     shift and go to state 16
+    SET_PRINT                      shift and go to state 10
+
+state 9
+
+    (6) L_SENT_PRINT -> SENT_PRINT .
+
+    ENDPRINT        reduce using rule 6 (L_SENT_PRINT -> SENT_PRINT .)
+    SET_PRINT_X     reduce using rule 6 (L_SENT_PRINT -> SENT_PRINT .)
+    SET_PRINT_O     reduce using rule 6 (L_SENT_PRINT -> SENT_PRINT .)
+    SET_PRINT_TRIANGULO reduce using rule 6 (L_SENT_PRINT -> SENT_PRINT .)
+    SET_PRINT_ESTRELLA reduce using rule 6 (L_SENT_PRINT -> SENT_PRINT .)
+
+
+state 10
+
+    (7) SENT_PRINT -> SET_PRINT . PARIZQ ENTERO COMA ENTERO COMA COLOR PARDER PUNTOCOMA
+
+    PARIZQ          shift and go to state 17
+
+
+state 11
+
+    (12) SET_PRINT -> SET_PRINT_X .
+
+    PARIZQ          reduce using rule 12 (SET_PRINT -> SET_PRINT_X .)
+
+
+state 12
+
+    (13) SET_PRINT -> SET_PRINT_O .
+
+    PARIZQ          reduce using rule 13 (SET_PRINT -> SET_PRINT_O .)
+
+
+state 13
+
+    (14) SET_PRINT -> SET_PRINT_TRIANGULO .
+
+    PARIZQ          reduce using rule 14 (SET_PRINT -> SET_PRINT_TRIANGULO .)
+
+
+state 14
+
+    (15) SET_PRINT -> SET_PRINT_ESTRELLA .
+
+    PARIZQ          reduce using rule 15 (SET_PRINT -> SET_PRINT_ESTRELLA .)
+
+
+state 15
+
+    (4) SENT -> NEWPRINT ID PUNTOCOMA L_SENT_PRINT ENDPRINT . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 18
+
+
+state 16
+
+    (5) L_SENT_PRINT -> L_SENT_PRINT SENT_PRINT .
+
+    ENDPRINT        reduce using rule 5 (L_SENT_PRINT -> L_SENT_PRINT SENT_PRINT .)
+    SET_PRINT_X     reduce using rule 5 (L_SENT_PRINT -> L_SENT_PRINT SENT_PRINT .)
+    SET_PRINT_O     reduce using rule 5 (L_SENT_PRINT -> L_SENT_PRINT SENT_PRINT .)
+    SET_PRINT_TRIANGULO reduce using rule 5 (L_SENT_PRINT -> L_SENT_PRINT SENT_PRINT .)
+    SET_PRINT_ESTRELLA reduce using rule 5 (L_SENT_PRINT -> L_SENT_PRINT SENT_PRINT .)
+
+
+state 17
+
+    (7) SENT_PRINT -> SET_PRINT PARIZQ . ENTERO COMA ENTERO COMA COLOR PARDER PUNTOCOMA
+
+    ENTERO          shift and go to state 19
+
+
+state 18
+
+    (4) SENT -> NEWPRINT ID PUNTOCOMA L_SENT_PRINT ENDPRINT PUNTOCOMA .
+
+    NEWPRINT        reduce using rule 4 (SENT -> NEWPRINT ID PUNTOCOMA L_SENT_PRINT ENDPRINT PUNTOCOMA .)
+    $end            reduce using rule 4 (SENT -> NEWPRINT ID PUNTOCOMA L_SENT_PRINT ENDPRINT PUNTOCOMA .)
+
+
+state 19
+
+    (7) SENT_PRINT -> SET_PRINT PARIZQ ENTERO . COMA ENTERO COMA COLOR PARDER PUNTOCOMA
+
+    COMA            shift and go to state 20
+
+
+state 20
+
+    (7) SENT_PRINT -> SET_PRINT PARIZQ ENTERO COMA . ENTERO COMA COLOR PARDER PUNTOCOMA
+
+    ENTERO          shift and go to state 21
+
+
+state 21
+
+    (7) SENT_PRINT -> SET_PRINT PARIZQ ENTERO COMA ENTERO . COMA COLOR PARDER PUNTOCOMA
+
+    COMA            shift and go to state 22
+
+
+state 22
+
+    (7) SENT_PRINT -> SET_PRINT PARIZQ ENTERO COMA ENTERO COMA . COLOR PARDER PUNTOCOMA
+    (8) COLOR -> . T_CYAN
+    (9) COLOR -> . T_MAGENTA
+    (10) COLOR -> . T_AMARILLO
+    (11) COLOR -> . T_NEGRO
+
+    T_CYAN          shift and go to state 24
+    T_MAGENTA       shift and go to state 25
+    T_AMARILLO      shift and go to state 26
+    T_NEGRO         shift and go to state 27
+
+    COLOR                          shift and go to state 23
+
+state 23
+
+    (7) SENT_PRINT -> SET_PRINT PARIZQ ENTERO COMA ENTERO COMA COLOR . PARDER PUNTOCOMA
+
+    PARDER          shift and go to state 28
+
+
+state 24
+
+    (8) COLOR -> T_CYAN .
+
+    PARDER          reduce using rule 8 (COLOR -> T_CYAN .)
+
+
+state 25
+
+    (9) COLOR -> T_MAGENTA .
+
+    PARDER          reduce using rule 9 (COLOR -> T_MAGENTA .)
+
+
+state 26
+
+    (10) COLOR -> T_AMARILLO .
+
+    PARDER          reduce using rule 10 (COLOR -> T_AMARILLO .)
+
+
+state 27
+
+    (11) COLOR -> T_NEGRO .
+
+    PARDER          reduce using rule 11 (COLOR -> T_NEGRO .)
+
+
+state 28
+
+    (7) SENT_PRINT -> SET_PRINT PARIZQ ENTERO COMA ENTERO COMA COLOR PARDER . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 29
+
+
+state 29
+
+    (7) SENT_PRINT -> SET_PRINT PARIZQ ENTERO COMA ENTERO COMA COLOR PARDER PUNTOCOMA .
+
+    ENDPRINT        reduce using rule 7 (SENT_PRINT -> SET_PRINT PARIZQ ENTERO COMA ENTERO COMA COLOR PARDER PUNTOCOMA .)
+    SET_PRINT_X     reduce using rule 7 (SENT_PRINT -> SET_PRINT PARIZQ ENTERO COMA ENTERO COMA COLOR PARDER PUNTOCOMA .)
+    SET_PRINT_O     reduce using rule 7 (SENT_PRINT -> SET_PRINT PARIZQ ENTERO COMA ENTERO COMA COLOR PARDER PUNTOCOMA .)
+    SET_PRINT_TRIANGULO reduce using rule 7 (SENT_PRINT -> SET_PRINT PARIZQ ENTERO COMA ENTERO COMA COLOR PARDER PUNTOCOMA .)
+    SET_PRINT_ESTRELLA reduce using rule 7 (SENT_PRINT -> SET_PRINT PARIZQ ENTERO COMA ENTERO COMA COLOR PARDER PUNTOCOMA .)
+

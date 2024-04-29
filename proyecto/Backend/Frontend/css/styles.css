@@ -1,0 +1,237 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+html {
+    scroll-behavior: smooth;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.nav {
+    color: #fff;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+}
+
+button {
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+nav .nav .nav-item{
+    cursor: pointer;
+}
+
+/*SECCION 1*/
+
+.sec1 {
+    width: 100%;
+    height: 38vh;
+    display: flex;
+    gap: 1rem;
+    padding: 2rem 5rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.fig_cyan {
+    background-color: cyan;
+}
+
+.fig_magenta {
+    background-color: magenta;
+}
+
+.fig_amarillo {
+    background-color: yellow;
+}
+
+.fig_negro {
+    background-color: black;
+    color: white;
+}
+
+.cont {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+textarea {
+    width: 95%;
+    height: 95%;
+    background: #fbfbfe;
+    color: black;
+    border: none;
+    outline: 0;
+    font-size: 15px;
+    padding: 1.5rem;
+    resize: none;
+}
+
+/*SECCION 2*/
+
+.sec2 {
+    width: 100%;
+    display: flex;
+    padding: 0 5rem;
+}
+
+.cont.left,
+.cont.right {
+    flex-basis: 50%;
+}
+
+.sec2 .left {
+    flex-basis: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.sec2 .left label {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.sec2 .left .lbl_info {
+    font-size: 1rem;
+    color: white;
+}
+
+.cont .left .figuras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cont .left .colores {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cont .left .colores button {
+    width: 6rem;
+    border: none;
+    outline: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    margin: 0.2rem 0;
+}
+
+.figuras ul li {
+    display: inline-block;
+}
+
+.figuras ul li img {
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+.figuras ul li img:hover {
+    transform: scale(1.35);
+}
+
+.cont .left .colores button:hover{
+    transform: scale(1.1);
+}
+
+.selecion_actual{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0 0 0;
+}
+
+.sec2 .right {
+    flex-basis: 65%;
+}
+
+.sec2 .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sec2 .right .seleccion_matriz {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.sec2 .right .seleccion_matriz button {
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.sec2 .right .seleccion_matriz button:disabled {
+    background-color: #ccc;
+    color: white;
+    cursor: not-allowed;
+}
+
+.sec2 .right label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+}
+
+#matriz {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+#matriz td {
+    width: 8rem;
+    height: 8rem;
+    max-width: 8rem;
+    max-height: 8rem;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    background: white;
+}
+
+#matriz td:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+#matriz td img {
+    max-width: 100%;
+    max-height: 100%;
+}
