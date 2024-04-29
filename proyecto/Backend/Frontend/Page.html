@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/impresora.png">
+    <title>Plotter Serial</title>
+
+    <!-- DEPENDENCIAS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js"></script>
+
+
+    <!-- ICONOS -->
+    <script src="https://kit.fontawesome.com/e63c20851b.js" crossorigin="anonymous"></script>
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Barra de navegacion -->
+        <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+            <!-- Navbar content -->
+            <ul class="nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button"
+                        aria-expanded="false">Archivo</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="" id="navbar_item_abrir">Abrir</a></li>
+                        <li><a class="dropdown-item" href="" id="navbar_item_nuevo">Nuevo</a></li>
+                        <li><a class="dropdown-item" href="" id="navbar_item_guardar">Guardar</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item" id="navbar_item_aayuda">
+                    <a class="nav-link" href="" data-bs-target="#modalAyuda" data-bs-toggle="modal">Ayuda</a>
+                </li>
+                <li class="nav-item" id="navbar_item_analizar">
+                    <a class="nav-link">Analizar Entrada</a>
+                </li>
+                <li class="nav-item" id="navbar_item_imprimir">
+                    <a class="nav-link">Imprimir Matriz</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="bg-secondary">
+        <section class="cont sec1">
+            <label id="lbl_archivo">Archivo: ...</label>
+            <textarea id="archivo_texto"></textarea>
+        </section>
+        <section class="cont sec2">
+            <div class="left">
+                <label>Figuras</label>
+                <div class="figuras">
+                    <ul>
+                        <li><a href="#" class="figura" id="fig_estrella"><img src="images/estrella.png" alt="Estrella"></a></li>
+                        <li><a href="#" class="figura" id="fig_equis"><img src="images/equis.png" alt="Equis"></a></li>
+                        <li><a href="#" class="figura" id="fig_circulo"><img src="images/circulo.png" alt="Circulo"></a></li>
+                        <li><a href="#" class="figura" id="fig_triangulo"><img src="images/triangulo.png" alt="Triangulo"></a></li>
+                        <li><a href="#" class="figura" id="fig_eliminar"><img src="images/trash.png" alt="Eliminar"></a></li>
+                    </ul>
+                </div>
+                <label>Colores</label>
+                <div class="colores">
+                    <button class="fig_cyan" id="col_cyan">Cyan</button>
+                    <button class="fig_magenta" id="col_magenta">Magenta</button>
+                    <button class="fig_amarillo" id="col_yellow">Amarillo</button>
+                    <button class="fig_negro" id="col_black">Negro</button>
+                </div>
+
+                <div class="selecion_actual">
+                    <label>Seleccion actual:</label>
+                    <label id="color_seleccionado" class="lbl_info">Color: ...</label>
+                    <label id="figura_seleccionado" class="lbl_info">Figura: ...</label>
+                </div>
+
+            </div>
+            <div class="right">
+                <label id="lbl_matriz">Matriz: ...</label>
+                <table id="matriz">
+                    <tr>
+                        <td id="celda11" class="celda_mat"></td>
+                        <td id="celda12" class="celda_mat"></td>
+                        <td id="celda13" class="celda_mat"></td>
+                    </tr>
+                    <tr>
+                        <td id="celda21" class="celda_mat"></td>
+                        <td id="celda22" class="celda_mat"></td>
+                        <td id="celda23" class="celda_mat"></td>
+                    </tr>
+                    <tr>
+                        <td id="celda31" class="celda_mat"></td>
+                        <td id="celda32" class="celda_mat"></td>
+                        <td id="celda33" class="celda_mat"></td>
+                    </tr>
+                </table>
+                
+                <div class="seleccion_matriz">
+                    <button id="btn_anterior" disabled>Anterior</button>
+                    <button id="btn_siguiente" disabled>Siguiente</button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- MODAL -->
+        <div class="modal fade" id="modalAyuda" aria-hidden="true" aria-labelledby="modalAyudal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-xl"> <!-- Clase modal-xl para hacer el modal más grande -->
+                <div class="modal-content">
+                    <div class="modal-body modal-info">
+                        <iframe src="docs/DOCUMENTACION.pdf" frameborder="0" style="width: 100%; height: 800px;"></iframe> <!-- Establecer el ancho y alto del iframe según sea necesario -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para subir archivo -->
+        <div class="modal fade" id="modalArchivo" tabindex="-1" aria-labelledby="modalArchivoLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="modalArchivoLabel">Abrir archivo</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="p">Abre un archivo de texto para su análisis.</div>
+                  <input type="file" id="file_input" accept=".orga, .txt">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </main>
+</body>
+
+    <script src="js/matriz.js"></script>
+    <script src="js/analisis.js"></script>
+    <script src="js/archivos.js"></script>
+
+</html>
