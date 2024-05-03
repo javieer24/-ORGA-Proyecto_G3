@@ -76,6 +76,49 @@
 <!-- Resumen -->
 ## Resumen
 
+El proyecto consistía en desarrollar un plotter (impresora gráfica) controlado por una computadora a través de una conexión serial (puerto paralelo o serial). El plotter debía ser capaz de replicar dibujos realizados en una aplicación de escritorio en una hoja de papel bond, utilizando un lápiz o similar como medio de impresión.
+
+### Requerimientos principales:
+
+- Aplicación de escritorio:
+
+    *  Interfaz gráfica con lienzo para dibujar en una matriz de 3x3 (estilo PixelArt)
+    * Opciones: Abrir, Editar, Guardar, Guardar Como, Imprimir
+Figuras predefinidas
+Formato de archivo ".orga"
+Código fuente alojado en un repositorio Git (GitLab)
+- Interfaz PC:
+
+    * Conexión serial a través del puerto paralelo LPT1 o puerto serial
+Envío y recepción de datos seriales hacia un Arduino
+- Transmisión de datos:
+
+    * Envío de datos desde la PC al controlador de motores del plotter
+- Impresión:
+
+    * Almacenar 3 coordenadas a imprimir en una matriz de Flip-Flops (simulando RAM)
+Imprimir las 3 coordenadas al presionar "Enter"
+Regresar al punto de origen después de imprimir
+Proceso automático para imprimir un lienzo completo
+- Coordenadas X y Y:
+
+    * Indicadores de las coordenadas X y Y del cabezal de impresión
+    * Mostrar en la aplicación y externamente mediante displays
+- Área de impresión:
+
+    * Hoja de papel bond tamaño carta
+    * Indicadores en las esquinas (sensores de color)
+    * LED azul si todos los sensores están alineados correctamente
+    * LED amarillo si algún sensor está desalineado
+- Alineación:
+
+    * 4 sensores de color para detectar la alineación del área de impresión
+Indicadores visuales (LED verde y rojo) para cada sensor
+Integrados permitidos:
+
+Se proporciona una lista de circuitos integrados y compuertas lógicas que nos fueron permitidas para la realización del proyecto.
+
+
 
 ## 📖 Documentación
 Para comprender de mejor manera el funcionamiento del proyecto puede dirigirse a lo siguiente información:
