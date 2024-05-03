@@ -33,7 +33,7 @@ function cambiar_imagen() {
     }
 
     var img = document.createElement("img")
-    img.src = "/images/" + figura + ".png"
+    img.src = "../Frontend/images/" + figura + ".png"
     document.getElementById(celda).appendChild(img)
 }
 

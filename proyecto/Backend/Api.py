@@ -1,25 +1,17 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 import Interprete.Gramatica as Gm
 import json
-import os
+
+from Figura import Figura
 
 #import pyserial
+import serial
+import time
 
 app = Flask(__name__)
 CORS(app)  # Habilitar CORS para la aplicación Flask
-
-# Ruta para servir los archivos estáticos del frontend
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def serve_frontend(path):
-    if path == "":
-        return send_from_directory('../Frontend', 'Page.html')
-    elif os.path.exists(os.path.join('../Frontend', path)):
-        return send_from_directory('../Frontend', path)
-    else:
-        return send_from_directory('../Frontend', 'Page.html')
 
 @app.route('/plotterserial/analizar', methods=['POST'])
 def analizar():
@@ -64,21 +56,50 @@ def graficar():
     if not matriz_recibido:
         return jsonify({'error': 'No se recibió matriz'})
     
-
-    for item in matriz_recibido:
-        fila = item['pos']['fila']
-        columna = item['pos']['columna']
-        color = item['color']
-        figura = item['figura']
-        print(f"Fila: {fila}, Columna: {columna}, Color: {color}, Figura: {figura}")
-        print("")
-
-        # TODO: Implementar logica impresora con pyserial
-
+    fig = figuras(matriz_recibido)
+    
+    for f in fig:
+        temp = f.binario()
+        sendserial(temp)
 
     return jsonify({'mensaje': 'Graficación terminada'})
 
-if __name__ == '__main__':
+def figuras(matriz_recibido):
+    nfilas = 3
+    ncolumnas = 3
+    pointer = 0
+    figuras = []
 
+    for filas in range(1,nfilas+1):
+        for columnas in range(1,ncolumnas+1):
+            fmatriz = int(matriz_recibido[pointer]['pos']['fila'])
+            cmatriz = int(matriz_recibido[pointer]['pos']['columna'])
+            if fmatriz == filas and cmatriz == columnas:
+                color = matriz_recibido[pointer]['color']
+                figura = matriz_recibido[pointer]['figura']
+                figuras.append(Figura(color=color, forma=figura, vacio=False))
+                pointer = controlpointer(len(matriz_recibido), pointer)
+            else:
+                figuras.append(Figura(color=None, forma=None, vacio=True))
+
+    return figuras
+
+def controlpointer(limite, contador):
+    if contador < limite - 1:
+        return contador + 1
+    return contador
+
+
+def sendserial(cmd):
+    ser = serial.Serial('COM5', 9600)
+    time.sleep(10)  # Espera a que se establezca la conexión serial
+    try:       
+        ser.write(cmd.encode())
+        print(cmd)
+    finally:
+        ser.close()
+
+
+if __name__ == '__main__':
     # Ejecutar la aplicación Flask
     app.run(debug=True, port=4000)

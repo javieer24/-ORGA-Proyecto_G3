@@ -87,8 +87,7 @@ function llenar_matriz(){
         celda.style.backgroundColor = sentencia.color.toLowerCase()
 
         var img = document.createElement("img")
-        img.src = "/images/" + sentencia.figura.toLowerCase() + ".png";
-
+        img.src = "../Frontend/images/" + sentencia.figura.toLowerCase() + ".png"
         celda.appendChild(img)
     })
 
