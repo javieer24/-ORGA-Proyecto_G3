@@ -1,11 +1,25 @@
 # [ORGA]Proyecto_G3
 <h1 align="center">Proyecto de Organización Computacional</h1>
+
+## Printer 
+
 <p align="center">
-    <img src="">
+    <img src="Documentacion\IMG\Printer.png">
+</p>
+
+## RAM
+
+<p align="center">
+    <img src="Documentacion\IMG\Memoria RAM.jpeg">
+</p>
+
+<p align="center">
+    <img src="Documentacion\IMG\Memoria-RAM-4x5-1.jpg">
 </p>
 <p align="center">
-    <img src="">
+    <img src="Documentacion\IMG\Memoria-RAM-4x5-2.jpg">
 </p>
+
 <h2 align="center">Grupo #3</h2>
 
 <div align="center"> 🏛 Universidad San Carlos de Guatemala</div>
